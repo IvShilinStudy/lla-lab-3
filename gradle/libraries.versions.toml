@@ -15,7 +15,7 @@ koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
 koin-core = { module = "io.insert-koin:koin-core" }
 
 # KotlinX
-kotlinx-coroutines-bom = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-bom", version = "coroutines-bom" }
+kotlinx-coroutines-bom = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-bom", version.ref = "coroutines-bom" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core"}
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.6.2" }
 
