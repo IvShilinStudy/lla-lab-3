@@ -1,7 +1,8 @@
 [versions]
 
 kotlin = "1.9.23"
-koin-bom = "3.5.6"
+koin = "3.5.6"
+coroutines = "1.8.1"
 coil = "2.5.0"
 
 [libraries]
@@ -9,23 +10,24 @@ coil = "2.5.0"
 # Classpath plugins
 plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
-# TODO("Переделать")
 # Koin
-koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
-koin-core = { module = "io.insert-koin:koin-core" }
+koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-core-coroutines = { module = "io.insert-koin:koin-core-coroutines", version.ref = "koin" }
 
-# TODO("Переделать")
 # KotlinX
-kotlinx-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version = "1.8.1" }
+kotlinx-coroutines-bom = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-bom", version.ref = "coroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines"}
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines"}
+kotlinx-coroutines-debug = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-debug", version.ref = "coroutines"}
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.6.2" }
 
 # Coil
-coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-core = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 
-lottie = { module = "com.airbnb.android:lottie", version = "5.2.0" }
-timber = { module = "com.jakewharton.timber:timber", version = "5.0.1" }
-jodatime = { module = "joda-time:joda-time", version = "2.12.5" }
+# Joda
+jodatime = { module = "joda-time:joda-time", version = "2.12.7" }
 
 [plugins]
 kotlin-jvm = {id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"}
@@ -33,4 +35,8 @@ kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
-#[bundles]
+[bundles]
+coroutines = ["kotlinx-coroutines-core", "kotlinx-coroutines-debug"]
+coroutines-test = ["kotlinx-coroutines-core", "kotlinx-coroutines-debug", "kotlinx-coroutines-test"]
+koin = ["koin-core", "koin-core-coroutines"]
+coil = ["coil-core", "coil-svg"]

@@ -1,19 +1,20 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
-    alias(libs.plugins.kotlin.serialization)
     application
 }
 
 application {
-    mainClass = "ru.ivan_shilin.MainKt"
+    mainClass = "ru.ivan_shilin.presentation.MainKt"
 }
 
 group = "ru.ivan_shilin"
 version = "0.0.1"
 
 dependencies {
-    implementation(libs.kotlinx.coroutines)
-    implementation(libs.kotlinx.serialization)
+    implementation(platform(libs.kotlinx.coroutines.bom))
+    implementation(libs.bundles.coroutines)
+    implementation(platform(libs.koin.bom))
+    implementation(libs.bundles.koin)
 }
 
 kotlin {
