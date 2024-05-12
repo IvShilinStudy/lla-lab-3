@@ -12,7 +12,7 @@ plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.
 
 # Koin
 koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
-koin-core = { module = "io.insert-koin:koin-core" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin-bom" }
 
 # KotlinX
 kotlinx-coroutines-bom = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-bom", version.ref = "coroutines-bom" }
