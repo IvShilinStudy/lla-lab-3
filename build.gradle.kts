@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass = "ru.ivan_shilin.MainKt"
+    mainClass = "ru.ivan_shilin.presentation.MainKt"
 }
 
 group = "ru.ivan_shilin"
