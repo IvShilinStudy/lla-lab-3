@@ -17,7 +17,8 @@ application {
 dependencies {
     implementation(platform(libs.kotlinx.coroutines.bom))
     implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.serialization)
+    implementation(platform(libs.koin.bom))
+    implementation(libs.bundles.koin)
 }
 
 kotlin {
