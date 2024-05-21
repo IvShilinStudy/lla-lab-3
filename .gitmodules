@@ -1,3 +1,6 @@
 [submodule "lla-lab-3-server"]
 	path = lla-lab-3-server
 	url = git@github.com:IvShilin/lla-lab-3-server.git
+[submodule "lla-lab-3-client"]
+	path = lla-lab-3-client
+	url = git@github.com:IvShilin/lla-lab-3-client.git
